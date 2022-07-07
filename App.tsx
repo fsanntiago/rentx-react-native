@@ -12,6 +12,7 @@ import { ThemeProvider } from "styled-components";
 
 import { Home } from "./src/screen/Home";
 import { CarDetails } from "./src/screen/CarDetails";
+import { Scheduling } from "./src/screen/Scheduling";
 
 import theme from "./src/styles/theme";
 
@@ -52,8 +53,7 @@ export default function App() {
   return (
     <GestureHandlerRootView onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
-        {/* <Home /> */}
-        <CarDetails />
+        <Scheduling />
       </ThemeProvider>
     </GestureHandlerRootView>
   );
