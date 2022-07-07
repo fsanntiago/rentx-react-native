@@ -18,5 +18,5 @@ export const Container = styled(RectButton)<ButtonProps>`
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.primary_500};
   font-size: ${RFValue(15)}px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.shape_light};
 `;

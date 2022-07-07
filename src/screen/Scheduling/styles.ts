@@ -26,7 +26,7 @@ export const Header = styled.View`
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.secondary_600};
   font-size: ${RFValue(30)}px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.shape_light};
   line-height: ${RFValue(34)}px;
   margin-top: 24px;
 `;
@@ -55,7 +55,7 @@ export const DateValue = styled.Text<DateValueProps>`
   margin-top: 9px;
   font-family: ${({ theme }) => theme.fonts.primary_500};
   font-size: ${RFValue(15)}px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.shape_light};
 
   ${({ selected, theme }) =>
     !selected &&

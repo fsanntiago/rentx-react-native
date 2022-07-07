@@ -1,5 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
+import { useTheme } from "styled-components";
 
 import { BackButton } from "../../components/BackButton";
 import { Button } from "../../components/Button";
@@ -20,12 +21,14 @@ import {
 } from "./styles";
 
 export function Scheduling() {
+  const theme = useTheme();
+
   return (
     <Container>
       <StatusBar style="light" translucent backgroundColor="transparent" />
 
       <Header>
-        <BackButton onPress={() => {}} color="#fff" />
+        <BackButton onPress={() => {}} color={theme.colors.shape_light} />
 
         <Title>
           Escolha uma{"\n"}
