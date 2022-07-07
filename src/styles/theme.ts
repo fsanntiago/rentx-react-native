@@ -17,6 +17,7 @@ export default {
 
     shape: "#E1E1E8",
     shape_dark: "#29292E",
+    shape_light: "#FFFFFF",
   },
 
   fonts: {
