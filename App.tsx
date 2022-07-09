@@ -10,7 +10,7 @@ import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { ThemeProvider } from "styled-components";
 
-import { SchedulingComplete } from "./src/screen/SchedulingComplete";
+import { Routes } from "./src/routes";
 
 import theme from "./src/styles/theme";
 
@@ -51,7 +51,7 @@ export default function App() {
   return (
     <GestureHandlerRootView onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
-        <SchedulingComplete />
+        <Routes />
       </ThemeProvider>
     </GestureHandlerRootView>
   );

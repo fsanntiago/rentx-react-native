@@ -1,5 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native";
 
 import { BackButton } from "../../components/BackButton";
 import { ImageSlider } from "../../components/ImageSlider";
@@ -12,6 +13,8 @@ import forceSvg from "../../assets/force.svg";
 import gasolineSvg from "../../assets/gasoline.svg";
 import exchangeSvg from "../../assets/exchange.svg";
 import peopleSvg from "../../assets/people.svg";
+
+import { NavigationProps } from "../../@types/navigation/navigation";
 
 import {
   Container,
@@ -31,12 +34,18 @@ import {
 } from "./styles";
 
 export function CarDetails() {
+  const { navigate, goBack } = useNavigation<NavigationProps>();
+
+  function handleConfirmRental() {
+    navigate("Scheduling");
+  }
+
   return (
     <Container>
       <StatusBar style="dark" />
 
       <Header>
-        <BackButton onPress={() => {}} />
+        <BackButton onPress={goBack} />
       </Header>
 
       <CarImages>
@@ -77,7 +86,10 @@ export function CarDetails() {
       </Content>
 
       <Footer>
-        <Button title="Confirmar" />
+        <Button
+          title="Escolher período do aluguel"
+          onPress={handleConfirmRental}
+        />
       </Footer>
     </Container>
   );

@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { Ionicons } from "@expo/vector-icons";
 
 import { useTheme } from "styled-components";
+import { useNavigation } from "@react-navigation/native";
 
 import { BackButton } from "../../components/BackButton";
 import { ImageSlider } from "../../components/ImageSlider";
@@ -15,6 +16,8 @@ import forceSvg from "../../assets/force.svg";
 import gasolineSvg from "../../assets/gasoline.svg";
 import exchangeSvg from "../../assets/exchange.svg";
 import peopleSvg from "../../assets/people.svg";
+
+import { NavigationProps } from "../../@types/navigation/navigation";
 
 import {
   Container,
@@ -44,13 +47,18 @@ import {
 
 export function SchedulingDetails() {
   const theme = useTheme();
+  const { navigate, goBack } = useNavigation<NavigationProps>();
+
+  function handleConfirmRental() {
+    navigate("SchedulingComplete");
+  }
 
   return (
     <Container>
       <StatusBar style="dark" />
 
       <Header>
-        <BackButton onPress={() => {}} />
+        <BackButton onPress={goBack} />
       </Header>
 
       <CarImages>
@@ -119,7 +127,11 @@ export function SchedulingDetails() {
       </Content>
 
       <Footer>
-        <Button title="Alugar agora" color={theme.colors.success} />
+        <Button
+          title="Alugar agora"
+          color={theme.colors.success}
+          onPress={handleConfirmRental}
+        />
       </Footer>
     </Container>
   );
