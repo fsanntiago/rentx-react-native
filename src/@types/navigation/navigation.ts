@@ -1,8 +1,9 @@
 import { StackNavigationProp } from "@react-navigation/stack";
+import { CarDTO } from "./../../dtos/carDTO";
 
 type RootStackParamList = {
   Home: undefined;
-  CarDetails: undefined;
+  CarDetails: { car: CarDTO };
   Scheduling: undefined;
   SchedulingComplete: undefined;
   SchedulingDetails: undefined;
