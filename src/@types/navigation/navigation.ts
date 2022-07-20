@@ -4,9 +4,9 @@ import { CarDTO } from "./../../dtos/carDTO";
 type RootStackParamList = {
   Home: undefined;
   CarDetails: { car: CarDTO };
-  Scheduling: undefined;
+  Scheduling: { car: CarDTO };
   SchedulingComplete: undefined;
-  SchedulingDetails: undefined;
+  SchedulingDetails: { car: CarDTO; dates: Object };
 };
 
 export type NavigationProps = StackNavigationProp<RootStackParamList>;
